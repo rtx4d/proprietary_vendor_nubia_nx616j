@@ -540,6 +540,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib/camera/components/com.nubia.node.realtimeaicamera.so",
             ],
             shared_libs: [
+                "libcutils",
                 "libcamera_metadata",
                 "libcom.qti.chinodeutils",
                 "libEGL",
@@ -1343,8 +1344,9 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib/hw/audio.primary.sdm845.so",
             ],
             shared_libs: [
-                "liblog",
                 "libprocessgroup",
+                "liblog",
+                "libcutils",
                 "libtinyalsa",
                 "libtinycompress_vendor",
                 "libaudioroute",
@@ -1884,6 +1886,33 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "libcutils",
                 "libutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libwebrtc_audio_preprocessing",
+    owner: "nubia",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libwebrtc_audio_preprocessing.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libcutils",
+                "libprotobuf-cpp-lite-vendorcompat",
                 "libc++",
                 "libc",
                 "libm",

@@ -185,6 +185,7 @@ PRODUCT_PACKAGES += \
     libcom.qti.chinodeutils \
     libqtigef \
     libtinycompress_vendor \
+    libwebrtc_audio_preprocessing \
     libasphere \
     libaudiopreprocessing \
     libqcbassboost \
